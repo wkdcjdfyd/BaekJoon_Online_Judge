@@ -20,28 +20,22 @@
 #include<stdio.h>
 
 int main() {
-	int A[9], B[9];
-	int i, temp, num;
+	int A[9];
+	int i, max, num;
 
 	for (i = 0; i < 9; i++) {
 		scanf("%d", &A[i]);
-		B[i] = A[i];
+		if (i == 0) {
+			max = A[i];
+			num = i + 1;
+		}
+		if (max < A[i]) {
+			max = A[i];
+			num = i + 1;
+		}
 	}
 
-	for (i = 1; i < 9; i++) {
-		if (B[0] < B[i]) {
-			temp = B[0];
-			B[0] = B[i];
-			B[i] = temp;
-		}
-	}
-	for (i = 0;; i++) {
-		if (B[0] == A[i]) {
-			num = i + 1;
-			break;
-		}
-	}
-	printf("%d\n", B[0]);
+	printf("%d\n", max);
 	printf("%d\n", num);
 
 	return 0;
