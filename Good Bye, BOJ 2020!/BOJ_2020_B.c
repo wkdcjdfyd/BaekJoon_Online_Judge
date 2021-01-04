@@ -1,3 +1,6 @@
+/*
+	20529번
+*/
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
@@ -39,6 +42,12 @@ int main() {
 
 	for (m = 0; m < T; m++) {
 		scanf("%d", &N);
+
+		if (N > 33) {			//비둘기집 원리 → 16*2 + 1 = 33개 이상이면 같은 MBTI가 3번 이상 나올 확률↑
+			printf("0\n");
+			continue;
+		}
+
 		for (l = 0; l < N; l++) {
 			scanf("%s", arr[l]);
 		}
