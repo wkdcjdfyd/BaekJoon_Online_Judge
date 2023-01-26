@@ -9,7 +9,6 @@ dy = [0, 0 ,-1 ,1]
 N, M = map(int, input().split())
 graph = [list(map(int, input().rstrip())) for _ in range(N)]
 visited = [[[0] * 2 for _ in range(M)] for _ in range(N)]
-flag = False
 
 q = deque()
 q.append((0, 0, 0))
