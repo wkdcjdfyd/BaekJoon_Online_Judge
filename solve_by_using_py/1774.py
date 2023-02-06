@@ -33,7 +33,5 @@ for u, v, d in edges:
         parents[find_set(v)] = find_set(u)
         dist += d
         cnt += 1
-    if cnt == N-1:
-        break
 
 print(format(round(dist, 2),".2f"))
