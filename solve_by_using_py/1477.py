@@ -7,15 +7,7 @@ if not N:
     exit()
 
 loc = sorted(list(map(int, input().split())))
-sub_loc = []
-for i in range(len(loc)):
-    if i == 0:
-        sub_loc.append(loc[i])
-    else:
-        sub_loc.append(loc[i]-loc[i-1])
-sub_loc.append(L-loc[-1])
-
-sub_loc.sort()
+sub_loc = [loc[0]] + [loc[i]-loc[i-1] for i in range(1, len(loc))] + [L-loc[-1]]
 
 def binary_search():
     s = 1
@@ -25,12 +17,7 @@ def binary_search():
         mid = (s + e) // 2
         cnt = 0
         for val in sub_loc:
-            if val > mid:
-                if val % mid == 0:
-                    cnt += (val // mid) - 1
-                else:
-                    cnt += val // mid
-
+            cnt += (val-1) // mid
         if cnt <= M:
             e = mid
         else:
