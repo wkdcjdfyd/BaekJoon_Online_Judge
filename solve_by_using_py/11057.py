@@ -1,10 +1,3 @@
-def is_up(n):
-    num_list = list(map(int, str(n)))
-    for i in range(len(num_list)-1):
-        if num_list[i] > num_list[i+1]:
-            return False
-    return True
-
 N = int(input())
 dp = [[1] * 10 for _ in range(N+1)]
 
