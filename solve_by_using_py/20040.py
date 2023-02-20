@@ -9,7 +9,7 @@ def find_set(x):
 for i in range(1, m+1):
     x, y = map(int, input().split())
     if find_set(x) != find_set(y):
-        parent[find_set(y)] = parent[find_set(x)]
+        parent[find_set(y)] = find_set(x)
     else:
         print(i)
         break
