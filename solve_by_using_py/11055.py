@@ -1,10 +1,11 @@
 import sys
+from copy import deepcopy
 
 input = sys.stdin.readline
 
 N = int(input())
 A = list(map(int, input().split()))
-dp = A[:]
+dp = deepcopy(A)
 
 for i in range(N):
     for j in range(0, i):
